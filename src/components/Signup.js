@@ -5,7 +5,7 @@ const Signup = (props) => {
     useEffect(() => {
         document.title = "NoteCloud - SignUp";
       }, )
-    const host = process.env.RENDER_BACKEND_API_URL;
+    const host = process.env.REACT_APP_API_URL;
     const [credentials, setCredentials] = useState({name:"",email:"",password:""})
     let navigate = useNavigate();
     const handleSubmit = async(e)=>{
