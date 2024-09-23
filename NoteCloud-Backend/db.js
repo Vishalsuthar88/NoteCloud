@@ -1,5 +1,5 @@
 const mongoose= require('mongoose');
-const mongoURI="mongodb://localhost:27017/NoteCloud";
+const mongoURI="mongodb+srv://vishal001:vishal001@cluster0.cmnhh.mongodb.net/NoteCloud";
 
 const connectToMongo=()=>{
     mongoose.connect(mongoURI);
