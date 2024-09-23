@@ -1,9 +1,21 @@
-const mongoose= require('mongoose');
-const mongoURI="mongodb+srv://vishal001:vishal001@cluster0.cmnhh.mongodb.net/NoteCloud";
+const mongoose = require('mongoose');
+require('dotenv').config(); // Load .env file
+// console.log(process.env);
 
-const connectToMongo=()=>{
-    mongoose.connect(mongoURI);
-    console.log("connection successful")
-}
+// Get Mongo URI from environment variables
+const mongoURI = process.env.MONGO_URI;
 
-module.exports=connectToMongo
+const connectToMongo = () => {
+    mongoose.connect(mongoURI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    })
+    .then(() => {
+        console.log('Connection to MongoDB successful');
+    })
+    .catch((err) => {
+        console.error('Failed to connect to MongoDB:', err.message); // Log error details
+    });
+};
+
+module.exports = connectToMongo;
