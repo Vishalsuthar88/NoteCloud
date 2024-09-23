@@ -6,7 +6,7 @@ const Login = (props) => {
       document.title = "NoteCloud - Login";
     }, )
     
-    const host = "https://notecloud-qons.onrender.com"
+    const host = process.env.RENDER_BACKEND_API_URL;
     const [credentials, setCredentials] = useState({email:"",password:""})
     const navigate = useNavigate();
     const handleSubmit = async(e)=>{
