@@ -5,7 +5,7 @@ const Signup = (props) => {
     useEffect(() => {
         document.title = "NoteCloud - SignUp";
       }, )
-    const host = "http://localhost:5000"
+    const host = "https://notecloud-qons.onrender.com"
     const [credentials, setCredentials] = useState({name:"",email:"",password:""})
     let navigate = useNavigate();
     const handleSubmit = async(e)=>{
